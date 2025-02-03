@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "pujiermanto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -60.75,
+      "left": 32.4,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -36.9,
+      "left": -196.1,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv1",
+      "top": -100.8,
+      "left": 177.6,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["drv1:STEP", "pico:GP2", "green", ["h0"]],
+    ["drv1:DIR", "pico:GP3", "green", ["h0"]],
+    ["pico:GND.2", "ultrasonic1:GND", "black", ["h0"]],
+    ["pico:3V3", "ultrasonic1:VCC", "green", ["h0"]]
+  ],
+  "dependencies": {}
+}
